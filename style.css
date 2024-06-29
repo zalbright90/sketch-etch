@@ -9,3 +9,10 @@
 	box-sizing: border-box;
 	border: 1px solid black;
 }
+
+
+#btn {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}

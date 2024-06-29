@@ -1,5 +1,21 @@
-//function to build grid in the container
+const button = document.querySelector('button');
 const container = document.querySelector('#container');
+
+button.addEventListener('click', function() {
+    let userInput 
+    do{
+        userInput = parseInt(prompt('Pick the size of your canvas (16-100):'), 10);
+    } while (isNaN(userInput) || userInput < 16 || userInput > 100);
+
+    clearGrid();
+    createGrid(userInput, userInput);
+});
+
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 function createGrid(rows, columns) {
 
