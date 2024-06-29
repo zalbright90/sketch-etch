@@ -1,11 +1,13 @@
 //function to build grid in the container
-function createGrid(size) {
-    const container = document.querySelector('#container');
-    container.textContent = '';
-    for (let i = 0; i < size * size; i++) {
+const container = document.querySelector('#container');
+
+function createGrid(rows, columns) {
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-columns', columns);
+    for (let i = 0; i < (rows * columns); i++) {
         const gridCell = document.createElement('div');
-        gridCell.className = 'grid';
-        container.appendChild(gridCell);
+        gridCell.innerText = ' ';
+        container.appendChild(gridCell).className = "grid";
     }
 }
-createGrid(16);
+createGrid(16, 16);
