@@ -2,11 +2,13 @@
 const container = document.querySelector('#container');
 
 function createGrid(rows, columns) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-columns', columns);
+
+    const cellWidth = container.clientWidth / columns;
+    const cellHeight = container.clientHeight / rows;
     for (let i = 0; i < (rows * columns); i++) {
         const gridCell = document.createElement('div');
-        gridCell.innerText = ' ';
+        gridCell.style.width = `${cellWidth}px`;
+        gridCell.style.height = `${cellHeight}px`;
         container.appendChild(gridCell).className = "grid";
     }
 }

@@ -1,13 +1,11 @@
 #container {
 	display: flex;
 	flex-wrap: wrap;
-	max-height:960px;
-	max-width:960px;
+	height:960px;
+	width:960px;
 }
 
 .grid {
-    flex:(calc(100%/(--grid-rows / --grid-columns)));
 	box-sizing: border-box;
 	border: 1px solid black;
-	padding: 32px;
 }
