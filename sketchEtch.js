@@ -26,8 +26,18 @@ function createGrid(rows, columns) {
         gridCell.style.width = `${cellWidth}px`;
         gridCell.style.height = `${cellHeight}px`;
         gridCell.className = "grid";
+        gridCell.dataset.interaction = 0;
+
+
         gridCell.addEventListener("mouseover", (event) => {
             gridCell.style.backgroundColor = "blue";
+            let interactionCount = parseInt(gridCell.dataset.interaction, 10);
+                    if (interactionCount < 10) {
+                        interactionCount += 1;
+                        gridCell.dataset.interaction = interactionCount;
+                        const opacity = interactionCount * 0.1; // Calculate opacity
+                        gridCell.style.backgroundColor = `rgba(173, 216, 230, ${opacity})`;
+                    }
         });
         container.appendChild(gridCell);
     }
