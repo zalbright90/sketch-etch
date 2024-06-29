@@ -9,7 +9,12 @@ function createGrid(rows, columns) {
         const gridCell = document.createElement('div');
         gridCell.style.width = `${cellWidth}px`;
         gridCell.style.height = `${cellHeight}px`;
-        container.appendChild(gridCell).className = "grid";
+        gridCell.className = "grid";
+        gridCell.addEventListener("mouseover", (event) => {
+            gridCell.style.backgroundColor = "blue";
+        });
+        container.appendChild(gridCell);
     }
 }
+
 createGrid(16, 16);
