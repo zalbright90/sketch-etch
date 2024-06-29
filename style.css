@@ -1,19 +1,14 @@
 #container {
-	position: relative;
-	top: 30px;
-	outline:2px solid #000;
-	font-size: 0;
-	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
 	height:960px;
 	width:960px;
-	padding: 0;
-	border: none;
+	margin: 0 auto;
 }
 
 .grid {
-    margin:0;
-    padding:0;
-    border:none;
-    outline:1px solid #000;
-    display:flex;
+    flex: 1 1 (calc(100%/16));
+	box-sizing: content-box;
+	border: 1px solid black;
+	margin: 0 auto;
 }
